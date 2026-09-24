@@ -127,15 +127,15 @@
       </div>
       <div class="cards">
         <article class="card">
-          <div class="kicker">CSIS · Latest appearance</div>
+          <div class="kicker">CSIS · July 30, 2026</div>
           <h3>The Impossible State</h3>
-          <p>Guest on the CSIS Korea Chair podcast discussing South Korean politics, foreign policy, and U.S.–Korea relations.</p>
+          <p>With Victor Cha, Adam Farrar, and Eunjoong Kim on U.S.–Korea trade tensions, the Coupang report, tariffs, and Korea’s $350 billion investment framework.</p>
           <p style="margin-top:14px"><a href="https://youtu.be/SfD4bntdPao?si=14ACLbjWVRlry-rS" target="_blank" rel="noopener"><strong>Watch →</strong></a></p>
         </article>
         <article class="card">
-          <div class="kicker">CSIS · Earlier appearance</div>
+          <div class="kicker">CSIS · June 21, 2025</div>
           <h3>The Impossible State</h3>
-          <p>Earlier appearance on the CSIS Korea Chair podcast.</p>
+          <p>With Victor Cha and Jake Kwon on the Lee Jae-myung government, the G7 Summit, and the future of U.S.–ROK and U.S.–ROK–Japan relations.</p>
           <p style="margin-top:14px"><a href="https://youtu.be/GxWzNbKpbyQ?si=54PkEFKXeApdSuYs" target="_blank" rel="noopener"><strong>Watch →</strong></a></p>
         </article>
         <article class="card">
@@ -204,6 +204,10 @@
   function render(tab){
     const items = (window.portfolioArticles && window.portfolioArticles[tab]) || [];
     grid.innerHTML = '';
+    if (!items.length) {
+      grid.innerHTML = '<article class="article"><div class="meta">Articles</div><h3>Article list is being updated.</h3><p>Please check back shortly.</p></article>';
+      return;
+    }
     items.forEach(a => {
       const el = document.createElement('article');
       el.className = 'article' + (a.url ? '' : ' no-link');
