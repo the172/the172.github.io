@@ -56,7 +56,7 @@ window.portfolioArticles = {
       date: "2026-08-12",
       title: "Francesca Hong",
       headline: "Francesca Hong has a plan for Wisconsin. Today, Democratic voters decide whether it’s their vision, too.",
-      dek: "On immigrant identity, economic populism and her bid to become the first Korean American governor in U.S. history.",
+      dek: "On immigrant identity, economic populism and her campaign for governor of Wisconsin.",
       url: "https://www.hani.co.kr/arti/english_edition/e_international/1272500.html"
     },
     {
@@ -74,89 +74,11 @@ window.portfolioArticles = {
       url: "https://english.hani.co.kr/arti/english_edition/e_international/1256675.html"
     },
     {
-      date: "2026-03",
-      dateDisplay: "March 2026",
-      title: "Seyed Hossein Mousavian",
-      dek: "On Iran’s decision-making system after the 2026 airstrikes, the resilience of the IRGC and diplomacy."
-    },
-    {
-      date: "2026-03",
-      dateDisplay: "March 2026",
-      title: "Nadia Schadlow",
-      dek: "On the “Peace through Strength” doctrine and the signaling effects of U.S. military action on China, Russia and North Korea."
-    },
-    {
-      date: "2026-03",
-      dateDisplay: "March 2026",
-      title: "Michael Cunningham",
-      dek: "On China’s wait-and-see strategy during the Hormuz crisis and the implications for U.S. global leadership."
-    },
-    {
-      date: "2026-03",
-      dateDisplay: "March 2026",
-      title: "James Walsh",
-      dek: "On Iran, nuclear knowledge, non-proliferation and implications for denuclearization on the Korean Peninsula."
-    },
-    {
-      date: "2025-12",
-      dateDisplay: "December 2025",
-      title: "Abraham Denmark",
-      dek: "On the costs and strategic challenges of South Korea’s nuclear-submarine ambitions and U.S. technology-transfer concerns."
-    },
-    {
-      date: "2025-10",
-      dateDisplay: "October 2025",
-      title: "Philippe Aghion",
-      dek: "On Korea’s middle-income-trap risk, chaebol dominance and sustaining innovation through creative destruction."
-    },
-    {
-      date: "2025-10",
-      dateDisplay: "October 2025",
-      title: "Rep. Sydney Kamlager-Dove",
-      dek: "On the Partner with Korea Act, visa tensions after the Georgia ICE raid and the E-4 professional visa bill."
-    },
-    {
-      date: "2025-07",
-      dateDisplay: "July 2025",
-      title: "Kate Kalutkiewicz",
-      dek: "On Korea–U.S. trade negotiations, package deals, defense cost-sharing and tariff bargaining."
-    },
-    {
       date: "2025-06-13",
       title: "Sen. James Risch & Rep. Ami Bera",
       headline: "Will US maintain troop level in Korea? Two US lawmakers weigh in",
       dek: "On U.S. Forces Korea, the NDAA, extended deterrence and alliance strategy.",
       url: "https://english.hani.co.kr/arti/english_edition/e_international/1202726.html"
-    },
-    {
-      date: "2025-05",
-      dateDisplay: "May 2025",
-      title: "Jenny Town",
-      dek: "On North Korea’s weapons-development roadmap, U.S. policy and prospects for renewed dialogue."
-    },
-    {
-      date: "2025-04",
-      dateDisplay: "April 2025",
-      title: "Kimberly Clausing",
-      dek: "On Trump’s tariff policies, U.S. bargaining power and recession risks."
-    },
-    {
-      date: "2025-04",
-      dateDisplay: "April 2025",
-      title: "Kathryn Weathersby",
-      dek: "On the historical foundations of North Korea–Russia relations and lessons from declassified Soviet archives."
-    },
-    {
-      date: "2025-03",
-      dateDisplay: "March 2025",
-      title: "Eric Labs",
-      dek: "On U.S. naval shipbuilding constraints and opportunities for Korea–U.S. cooperation."
-    },
-    {
-      date: "2025-02",
-      dateDisplay: "February 2025",
-      title: "Wendy Cutler",
-      dek: "On reciprocal tariffs, Trump’s trade strategy and implications for Korea–U.S. trade."
     }
   ],
 
