@@ -47,7 +47,11 @@
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px}.card .kicker{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;font-weight:850}.card h3{font-family:Georgia,"Times New Roman",serif;font-size:23px;margin:7px 0 8px}.card p{color:var(--muted);margin:0}
     .timeline{display:grid;gap:14px}.tl{display:grid;grid-template-columns:160px 1fr;gap:28px;padding:20px 0;border-bottom:1px solid var(--line)}.tl:last-child{border-bottom:0}.date{font-weight:850;color:var(--accent)}.tl h3{margin:0 0 5px;font-size:20px}.tl p{margin:0;color:var(--muted)}
     .awards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.award{padding:21px;border:1px solid var(--line);background:#fff;border-radius:14px;min-height:118px}.award strong{font-family:Georgia,"Times New Roman",serif;font-size:21px;display:block;margin-bottom:7px}
-    .contact{background:var(--ink);color:white;padding:52px;border-radius:22px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px}.contact h2{font-family:Georgia,"Times New Roman",serif;font-size:40px;line-height:1.05;margin:0 0 12px}.contact p{color:#cbd2dc}.contact a{color:white}
+    .contact{background:var(--ink);color:white;padding:52px;border-radius:22px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px}
+
+    .video-wrap{position:relative;width:100%;aspect-ratio:16/9;margin-top:16px;border-radius:12px;overflow:hidden;background:#000}
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.contact h2{font-family:Georgia,"Times New Roman",serif;font-size:40px;line-height:1.05;margin:0 0 12px}.contact p{color:#cbd2dc}.contact a{color:white}
     footer{padding:30px 0 58px;font-size:12px;color:var(--muted)}
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr .48fr;gap:34px}.articles{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:720px){nav{display:none}.hero{padding-top:50px}.hero-grid,.section-head,.bio-grid,.contact{grid-template-columns:1fr}.portrait-shell{max-width:285px;margin:28px 0 0}.articles,.cards,.awards{grid-template-columns:1fr}.tl{grid-template-columns:1fr;gap:4px}.contact{padding:32px 23px}}
@@ -58,6 +62,7 @@
   <div class="wrap nav">
     <div class="brand">Wonchul <span>Kim</span></div>
     <nav aria-label="Primary">
+      <a href="#home">Home</a>
       <a href="#articles">Articles</a>
       <a href="#about">About</a>
       <a href="#engagements">Media</a>
@@ -68,7 +73,7 @@
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="wrap hero-grid">
       <div>
         <h1>Wonchul Kim</h1>
@@ -142,6 +147,16 @@
           <div class="kicker">YouTube · 2025–Present</div>
           <h3>Correspondent’s America Talk</h3>
           <p>Host and producer of “특파원 미국썰” on the Hankyoreh Newsroom channel.</p>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/videoseries?list=PLJaE9rZWWAbWTun1-WEVvFKZEHp4K_hSC"
+              title="Correspondent’s America Talk playlist"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p style="margin-top:14px"><a href="https://www.youtube.com/playlist?list=PLJaE9rZWWAbWTun1-WEVvFKZEHp4K_hSC" target="_blank" rel="noopener"><strong>Open playlist →</strong></a></p>
         </article>
       </div>
     </div>
