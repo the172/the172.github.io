@@ -1,0 +1,35 @@
+name: Auto Update Articles
+
+on:
+  schedule:
+    # 매주 월요일 오전 9시(KST 기준)에 자동 실행 (UTC 일요일 00:00)
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Actions 탭에서 수동으로 'Run workflow' 버튼 클릭 가능
+
+jobs:
+  update-articles:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4
+
+      - name: Run crawler
+        run: python scripts/update_articles.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/articles.js
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update articles.js [skip ci]" && git push)
