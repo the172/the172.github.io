@@ -311,8 +311,6 @@ def read_hani(url):
         "date": date,
         "byline_ok": byline_ok,
     }
-
-
 # ------------------------------------------------------------- data I/O
 def load_data():
     with open(ARTICLES_JS, encoding="utf-8") as f:
@@ -320,13 +318,15 @@ def load_data():
     data = json.loads(s[s.index("{"): s.rindex("}") + 1])
     for k in ("reportage", "interview", "column", "latest"):
         data.setdefault(k, [])
+    data.setdefault("_seen", [])   # ids already checked (not shown on the site)
     return data
 
 
 def save_data(data):
-    for k in data:
+    for k in ("reportage", "interview", "column", "latest"):
         data[k].sort(key=lambda a: a.get("date", ""), reverse=True)
     data["latest"] = data["latest"][:LATEST_LIMIT]
+    data["_seen"] = sorted(set(data["_seen"]), key=lambda x: (len(x), x), reverse=True)
     out = ("// Auto-updated weekly by scripts/update_articles.py.\n"
            "// Hand edits are kept: the script only ADDS new articles.\n"
            "window.portfolioArticles = "
@@ -339,8 +339,9 @@ def save_data(data):
 def run():
     data = load_data()
     known_keys, known_titles = set(), set()
-    for lst in data.values():
-        for a in lst:
+    known_keys.update(data["_seen"])
+    for k in ("reportage", "interview", "column", "latest"):
+        for a in data[k]:
             known_keys.add(article_key(a.get("url", ""), a.get("title", "")))
             for f in ("title", "headline"):
                 if a.get(f):
@@ -379,6 +380,7 @@ def run():
         if not info["byline_ok"]:
             print(f"- skip (byline not Kim Won-chul): {headline or real}")
             known_keys.add(key)
+            data["_seen"].append(key)
             continue
 
         cat = classify(raw, *info["heads"])
@@ -389,6 +391,7 @@ def run():
             data[cat].append(dict(entry))
         data["latest"].append(dict(entry, type=TYPE_LABEL[cat]))
         known_keys.add(key)
+        data["_seen"].append(key)
         known_titles.add(norm_title(title))
         added += 1
         print(f"+ added [{TYPE_LABEL[cat]}] {entry['date']} {title}")
@@ -399,3 +402,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+
