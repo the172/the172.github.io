@@ -12,6 +12,9 @@ For every NEW article it:
       [Correspondent's column] -> column, no tag -> Latest only
   - adds it to assets/articles.js (existing entries are never overwritten)
 Lists are sorted newest first; the Latest tab keeps the newest 9.
+Articles with no tag are also put in Interview when the text says it is a
+Hankyoreh interview ("in an interview with the Hankyoreh", "told the Hankyoreh"...).
+"_checked" remembers every article id already checked, so it is not opened again.
 
 Standard library only. No pip install needed.
 """
@@ -28,7 +31,7 @@ from html.parser import HTMLParser
 ARTICLES_JS = "assets/articles.js"
 LATEST_LIMIT = 9           # items in the Latest tab
 SEARCH_PAGES = 3           # Hankyoreh search result pages to scan per run
-MAX_NEW_CHECKS = 120       # max new articles to open per run
+MAX_NEW_CHECKS = 200       # max new articles to open per run
 SEARCH_WORD = "kim won-chul"
 RSS_QUERIES = [
     '"Kim Won-chul" site:english.hani.co.kr',
@@ -43,6 +46,16 @@ BYLINE_PATTERNS = [
     r"kim\s+won[-\s]?chul\s*\|\s*(?:washington\s+)?(?:correspondent|bureau)",
     r"wonchul@hani\.co\.kr",
     r"김원철\s*(?:특파원|기자)",
+]
+
+# Text in the article body that marks it as an interview
+INTERVIEW_PATTERNS = [
+    r"interview\s+with\s+(?:the\s+)?hankyoreh",
+    r"(?:told|tells)\s+(?:the\s+)?hankyoreh",
+    r"(?:speaking|spoke|talking|talked|sat\s+down)\s+(?:to|with)\s+(?:the\s+)?hankyoreh",
+    r"hankyoreh\s+interview",
+    r"interview\s+with\s+this\s+(?:newspaper|paper)",
+    r"한겨레(?:와의|와)\s*(?:단독\s*)?인터뷰",
 ]
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -304,13 +317,17 @@ def read_hani(url):
         m = re.search(r"(20\d{2})[-.](\d{2})[-.](\d{2})\s+\d{1,2}:\d{2}", text)
         if m:
             date = "-".join(m.groups())
+    is_interview = any(re.search(x, text, flags=re.I) for x in INTERVIEW_PATTERNS)
     return {
         "url": final,
+        "is_interview": is_interview,
         "heads": [h for h in heads if h],
         "dek": html.unescape(p.meta.get("og:description", "")).strip(),
         "date": date,
         "byline_ok": byline_ok,
     }
+
+
 # ------------------------------------------------------------- data I/O
 def load_data():
     with open(ARTICLES_JS, encoding="utf-8") as f:
@@ -318,7 +335,8 @@ def load_data():
     data = json.loads(s[s.index("{"): s.rindex("}") + 1])
     for k in ("reportage", "interview", "column", "latest"):
         data.setdefault(k, [])
-    data.setdefault("_seen", [])   # ids already checked (not shown on the site)
+    data.pop("_seen", None)           # replaced by _checked (one-time re-check)
+    data.setdefault("_checked", [])   # ids already checked (not shown on the site)
     return data
 
 
@@ -326,7 +344,7 @@ def save_data(data):
     for k in ("reportage", "interview", "column", "latest"):
         data[k].sort(key=lambda a: a.get("date", ""), reverse=True)
     data["latest"] = data["latest"][:LATEST_LIMIT]
-    data["_seen"] = sorted(set(data["_seen"]), key=lambda x: (len(x), x), reverse=True)
+    data["_checked"] = sorted(set(data["_checked"]), key=lambda x: (len(x), x), reverse=True)
     out = ("// Auto-updated weekly by scripts/update_articles.py.\n"
            "// Hand edits are kept: the script only ADDS new articles.\n"
            "window.portfolioArticles = "
@@ -335,12 +353,28 @@ def save_data(data):
         f.write(out)
 
 
+def fill_interview_link(data, entry):
+    """If a hand-made interview card (name as title, no link) matches this
+    article, give that card the link instead of adding a duplicate."""
+    text = (entry["title"] + " " + entry["dek"]).lower()
+    for a in data["interview"]:
+        if a.get("url"):
+            continue
+        last = re.sub(r"[^a-z-]", "", a.get("title", "").split()[-1].lower()) if a.get("title") else ""
+        if len(last) >= 4 and last in text and a.get("date", "")[:4] == entry["date"][:4]:
+            a["url"] = entry["url"]
+            a.setdefault("headline", entry["title"])
+            return True
+    return False
+
+
 # ------------------------------------------------------------------ main
 def run():
     data = load_data()
     known_keys, known_titles = set(), set()
-    known_keys.update(data["_seen"])
-    for k in ("reportage", "interview", "column", "latest"):
+    known_keys.update(data["_checked"])
+    latest_keys = {article_key(a.get("url", ""), a.get("title", "")) for a in data["latest"]}
+    for k in ("reportage", "interview", "column"):
         for a in data[k]:
             known_keys.add(article_key(a.get("url", ""), a.get("title", "")))
             for f in ("title", "headline"):
@@ -380,18 +414,25 @@ def run():
         if not info["byline_ok"]:
             print(f"- skip (byline not Kim Won-chul): {headline or real}")
             known_keys.add(key)
-            data["_seen"].append(key)
+            data["_checked"].append(key)
             continue
 
         cat = classify(raw, *info["heads"])
+        if cat is None and info["is_interview"]:
+            cat = "interview"
         title = strip_tags(headline or raw)
         entry = {"date": info["date"] or it["date"], "title": title,
                  "dek": info["dek"], "url": info["url"]}
+        known_keys.add(key)
+        data["_checked"].append(key)
+        if cat == "interview" and fill_interview_link(data, entry):
+            print(f"~ linked existing interview: {entry['date']} {title}")
+            continue
         if cat:
             data[cat].append(dict(entry))
-        data["latest"].append(dict(entry, type=TYPE_LABEL[cat]))
-        known_keys.add(key)
-        data["_seen"].append(key)
+        if key not in latest_keys:
+            data["latest"].append(dict(entry, type=TYPE_LABEL[cat]))
+            latest_keys.add(key)
         known_titles.add(norm_title(title))
         added += 1
         print(f"+ added [{TYPE_LABEL[cat]}] {entry['date']} {title}")
@@ -402,4 +443,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-
