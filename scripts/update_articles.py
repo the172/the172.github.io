@@ -1,19 +1,21 @@
 """
 Weekly article updater for the172.github.io
 
-How it works
-1. Reads assets/articles.js (the curated list is the database; hand edits are kept).
-2. Searches Google News RSS for Kim Won-chul articles on The Hankyoreh English Edition.
-3. Resolves each Google News link to the real hani.co.kr URL.
-4. Opens the article and keeps it only if the byline is Kim Won-chul.
-5. Classifies by the title tag:
-   [Reportage] -> reportage, [Interview] -> interview,
-   [Correspondent's column] -> column, everything else -> latest only.
-6. Adds only NEW articles (existing entries are never overwritten), sorts newest first,
-   and keeps the latest 9 in the "Latest" tab.
+Sources (both are used; duplicates are removed):
+  1. Hankyoreh English search  (search.hani.co.kr/english, newest first)  <- main
+  2. Google News RSS                                                     <- backup
+
+For every NEW article it:
+  - opens the article page and keeps it only if the byline is Kim Won-chul
+  - classifies it by the title tag:
+      [Reportage] -> reportage, [Interview] -> interview,
+      [Correspondent's column] -> column, no tag -> Latest only
+  - adds it to assets/articles.js (existing entries are never overwritten)
+Lists are sorted newest first; the Latest tab keeps the newest 9.
 
 Standard library only. No pip install needed.
 """
+import datetime
 import html
 import json
 import re
@@ -24,13 +26,24 @@ import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 
 ARTICLES_JS = "assets/articles.js"
-LATEST_LIMIT = 9          # number of items in the Latest tab
-MAX_NEW_CHECKS = 120      # max unseen RSS items to open per run
-QUERIES = [
+LATEST_LIMIT = 9           # items in the Latest tab
+SEARCH_PAGES = 3           # Hankyoreh search result pages to scan per run
+MAX_NEW_CHECKS = 120       # max new articles to open per run
+SEARCH_WORD = "kim won-chul"
+RSS_QUERIES = [
     '"Kim Won-chul" site:english.hani.co.kr',
     '"Kim Won-chul" Hankyoreh English Edition',
 ]
-BYLINE_PATTERNS = [r"kim\s+won[-\s]?chul", r"wonchul\s+kim", r"김원철"]
+
+# Byline must look like a byline, not just a mention of the name in the text
+BYLINE_PATTERNS = [
+    r"\bby\s+(?:[A-Z][\w'-]+(?:\s+[A-Z][\w'-]+)*\s*(?:,|and|&)\s*)*kim\s+won[-\s]?chul",
+    r"interview(?:ed)?\s+by\s+kim\s+won[-\s]?chul",
+    r"kim\s+won[-\s]?chul\s*,\s*(?:washington\s+)?(?:correspondent|staff\s+reporter|bureau\s+chief)",
+    r"kim\s+won[-\s]?chul\s*\|\s*(?:washington\s+)?(?:correspondent|bureau)",
+    r"wonchul@hani\.co\.kr",
+    r"김원철\s*(?:특파원|기자)",
+]
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
@@ -46,16 +59,21 @@ TYPE_LABEL = {
     "reportage": "Reportage",
     None: "Analysis",
 }
+ARTICLE_URL_RE = re.compile(
+    r"(?:https?:)?(?://(?:www\.|english\.)?hani\.co\.kr)?(/arti/[^\"'\s<>?#]*?/(\d{5,})\.html)")
 
 
 # ---------------------------------------------------------------- helpers
-def http_get(url, timeout=20):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+def http_get(url, timeout=25):
+    req = urllib.request.Request(url, headers={"User-Agent": UA,
+                                               "Accept-Language": "en-US,en;q=0.9,ko;q=0.8"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", errors="replace"), r.geturl()
+        raw = r.read()
+        charset = r.headers.get_content_charset() or "utf-8"
+        return raw.decode(charset, errors="replace"), r.geturl()
 
 
-def http_post(url, body, timeout=20):
+def http_post(url, body, timeout=25):
     req = urllib.request.Request(
         url, data=body.encode("utf-8"), method="POST",
         headers={"User-Agent": UA,
@@ -77,27 +95,106 @@ def norm_title(t):
     return re.sub(r"[^a-z0-9]+", "", (t or "").lower())
 
 
+def clean_text(t):
+    t = html.unescape(re.sub(r"<[^>]+>", " ", t or ""))
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def strip_suffix(t):
-    t = re.sub(r"\s*[-|:]\s*(The\s+)?Hankyoreh.*$", "", t, flags=re.I)
-    t = re.sub(r"\s*-\s*한겨레.*$", "", t)
+    t = re.sub(r"\s*[-|:]\s*(The\s+)?Hankyoreh.*$", "", t or "", flags=re.I)
+    t = re.sub(r"\s*[-|:]\s*한겨레.*$", "", t)
     return t.strip()
 
 
-def classify(title):
-    for cat, pat in TAGS:
-        if re.search(pat, title, flags=re.I):
-            return cat
+def classify(*titles):
+    for title in titles:
+        for cat, pat in TAGS:
+            if title and re.search(pat, title, flags=re.I):
+                return cat
     return None
 
 
 def strip_tags(title):
-    t = title
+    t = title or ""
     for _, pat in TAGS:
         t = re.sub(pat, "", t, flags=re.I)
     t = re.sub(r"^\s*\[[^\]]{1,40}\]\s*", "", t)   # any other leading [Tag]
     return re.sub(r"\s{2,}", " ", t).strip(" -:")
 
 
+def canonical(path):
+    return "https://english.hani.co.kr" + path
+
+
+# --------------------------------------------- source 1: Hankyoreh search
+class LinkParser(HTMLParser):
+    """Collects (article path, anchor text) from a search result page."""
+    def __init__(self):
+        super().__init__()
+        self.links = {}     # path -> longest anchor text
+        self.order = []
+        self._href = None
+        self._buf = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            href = dict(attrs).get("href") or ""
+            m = ARTICLE_URL_RE.search(href)
+            self._href = m.group(1) if m else None
+            self._buf = []
+
+    def handle_data(self, data):
+        if self._href:
+            self._buf.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self._href:
+            text = clean_text(" ".join(self._buf))
+            if self._href not in self.links:
+                self.links[self._href] = ""
+                self.order.append(self._href)
+            if len(text) > len(self.links[self._href]):
+                self.links[self._href] = text
+            self._href = None
+
+
+def fetch_hani_search():
+    today = datetime.date.today().strftime("%Y.%m.%d")
+    items = []
+    seen = set()
+    for page in range(1, SEARCH_PAGES + 1):
+        params = {"searchword": SEARCH_WORD, "startdate": "1988.01.01",
+                  "enddate": today, "sort": "desc"}
+        if page > 1:
+            params["page"] = str(page)
+        url = "https://search.hani.co.kr/english?" + urllib.parse.urlencode(
+            params, quote_via=urllib.parse.quote)
+        try:
+            page_html, _ = http_get(url)
+        except Exception as e:
+            print(f"! Hankyoreh search page {page} failed: {e}")
+            break
+        p = LinkParser()
+        p.feed(page_html)
+        paths = list(p.order)
+        # links that are not inside <a> tags (e.g. in scripts) as a fallback
+        for m in ARTICLE_URL_RE.finditer(page_html):
+            if m.group(1) not in p.links:
+                p.links[m.group(1)] = ""
+                paths.append(m.group(1))
+        new = [x for x in paths if x not in seen]
+        print(f"  Hankyoreh search page {page}: {len(new)} article links")
+        if not new:
+            break
+        for path in new:
+            seen.add(path)
+            items.append({"url": canonical(path), "title": p.links.get(path, ""),
+                          "date": ""})
+        time.sleep(1)
+    return items
+
+
+# ---------------------------------------------- source 2: Google News RSS
 def rss_date(s):
     months = {m: i for i, m in enumerate(
         "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(), 1)}
@@ -108,7 +205,6 @@ def rss_date(s):
     return f"{y}-{months.get(mon, 1):02d}-{int(d):02d}"
 
 
-# ------------------------------------------------- Google News link decode
 def decode_google_news(url):
     """Turn a news.google.com/rss/articles/... link into the publisher URL."""
     if "news.google.com" not in url:
@@ -143,6 +239,29 @@ def decode_google_news(url):
     return None
 
 
+def fetch_rss():
+    items, seen = [], set()
+    for q in RSS_QUERIES:
+        url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q)
+               + "&hl=en-US&gl=US&ceid=US:en")
+        try:
+            xml, _ = http_get(url)
+        except Exception as e:
+            print(f"! RSS failed for {q!r}: {e}")
+            continue
+        for it in ET.fromstring(xml).findall(".//item"):
+            title = it.findtext("title", "")
+            nt = norm_title(strip_tags(strip_suffix(title)))
+            if nt in seen:
+                continue
+            seen.add(nt)
+            items.append({"url": it.findtext("link", ""), "title": title,
+                          "date": rss_date(it.findtext("pubDate", ""))})
+    items.sort(key=lambda x: x["date"], reverse=True)
+    print(f"  Google News RSS: {len(items)} items")
+    return items
+
+
 # --------------------------------------------------- Hankyoreh page reader
 class MetaParser(HTMLParser):
     def __init__(self):
@@ -162,18 +281,32 @@ def read_hani(url):
     page, final = http_get(url)
     p = MetaParser()
     p.feed(page)
-    text = re.sub(r"<script.*?</script>|<style.*?</style>", " ", page, flags=re.S | re.I)
-    text = html.unescape(re.sub(r"<[^>]+>", " ", text))
-    byline_ok = any(re.search(b, text, flags=re.I) for b in BYLINE_PATTERNS)
+    body = re.sub(r"<script.*?</script>|<style.*?</style>", " ", page, flags=re.S | re.I)
+    text = clean_text(body)
+    byline_ok = any(re.search(b, text, flags=re.I) for b in BYLINE_PATTERNS) or \
+        "wonchul@hani.co.kr" in page.lower()
+
+    # every place a headline (with its [Tag]) may appear
+    heads = [html.unescape(p.meta.get("og:title", ""))]
+    m = re.search(r"<title[^>]*>(.*?)</title>", page, flags=re.S | re.I)
+    if m:
+        heads.append(clean_text(m.group(1)))
+    heads += [clean_text(h) for h in re.findall(r"<h[1-3][^>]*>(.*?)</h[1-3]>", page,
+                                                flags=re.S | re.I)[:4]]
+
     date = ""
     for k in ("article:published_time", "og:regDate", "pubdate", "date"):
         m = re.search(r"(\d{4})[-.]?(\d{2})[-.]?(\d{2})", p.meta.get(k, ""))
         if m:
             date = "-".join(m.groups())
             break
+    if not date:
+        m = re.search(r"(20\d{2})[-.](\d{2})[-.](\d{2})\s+\d{1,2}:\d{2}", text)
+        if m:
+            date = "-".join(m.groups())
     return {
         "url": final,
-        "title": html.unescape(p.meta.get("og:title", "")),
+        "heads": [h for h in heads if h],
         "dek": html.unescape(p.meta.get("og:description", "")).strip(),
         "date": date,
         "byline_ok": byline_ok,
@@ -191,10 +324,8 @@ def load_data():
 
 
 def save_data(data):
-    def sort_key(a):
-        return a.get("date", "")
     for k in data:
-        data[k].sort(key=sort_key, reverse=True)
+        data[k].sort(key=lambda a: a.get("date", ""), reverse=True)
     data["latest"] = data["latest"][:LATEST_LIMIT]
     out = ("// Auto-updated weekly by scripts/update_articles.py.\n"
            "// Hand edits are kept: the script only ADDS new articles.\n"
@@ -202,28 +333,6 @@ def save_data(data):
            + json.dumps(data, indent=2, ensure_ascii=False) + ";\n")
     with open(ARTICLES_JS, "w", encoding="utf-8") as f:
         f.write(out)
-
-
-def fetch_rss():
-    items, seen = [], set()
-    for q in QUERIES:
-        url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q)
-               + "&hl=en-US&gl=US&ceid=US:en")
-        try:
-            xml, _ = http_get(url)
-        except Exception as e:
-            print(f"! RSS failed for {q!r}: {e}")
-            continue
-        for it in ET.fromstring(xml).findall(".//item"):
-            title = it.findtext("title", "")
-            nt = norm_title(strip_tags(strip_suffix(title)))
-            if nt in seen:
-                continue
-            seen.add(nt)
-            items.append({"title": title, "link": it.findtext("link", ""),
-                          "date": rss_date(it.findtext("pubDate", ""))})
-    items.sort(key=lambda x: x["date"], reverse=True)
-    return items
 
 
 # ------------------------------------------------------------------ main
@@ -237,36 +346,43 @@ def run():
                 if a.get(f):
                     known_titles.add(norm_title(strip_tags(a[f])))
 
-    added, checked = 0, 0
-    for it in fetch_rss():
+    candidates = fetch_hani_search() + fetch_rss()
+    added = checked = 0
+    for it in candidates:
         raw = strip_suffix(it["title"])
-        if norm_title(strip_tags(raw)) in known_titles:
+        if "news.google.com" not in it["url"] and article_key(it["url"]) in known_keys:
+            continue
+        if raw and norm_title(strip_tags(raw)) in known_titles:
             continue
         if checked >= MAX_NEW_CHECKS:
             break
         checked += 1
         try:
-            real = decode_google_news(it["link"])
-            time.sleep(1)
+            real = decode_google_news(it["url"])
+            if real != it["url"]:
+                time.sleep(1)
             if not real or "hani.co.kr" not in real:
                 print(f"- skip (not Hankyoreh / undecodable): {raw}")
+                continue
+            if article_key(real) in known_keys:
                 continue
             info = read_hani(real)
             time.sleep(1)
         except Exception as e:
-            print(f"! error on {raw}: {e}")
+            print(f"! error on {raw or it['url']}: {e}")
             continue
 
         key = article_key(info["url"])
         if key in known_keys:
             continue
+        headline = strip_suffix(info["heads"][0] if info["heads"] else raw)
         if not info["byline_ok"]:
-            print(f"- skip (byline not Kim Won-chul): {raw}")
+            print(f"- skip (byline not Kim Won-chul): {headline or real}")
+            known_keys.add(key)
             continue
 
-        full = strip_suffix(info["title"] or raw)
-        cat = classify(full) or classify(raw)
-        title = strip_tags(full)
+        cat = classify(raw, *info["heads"])
+        title = strip_tags(headline or raw)
         entry = {"date": info["date"] or it["date"], "title": title,
                  "dek": info["dek"], "url": info["url"]}
         if cat:
