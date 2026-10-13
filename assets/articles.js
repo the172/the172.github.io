@@ -3,6 +3,12 @@
 window.portfolioArticles = {
   "reportage": [
     {
+      "date": "2026-10-06",
+      "title": "Ahead of midterms, farm belt’s loyalty to Trump shows cracks in Kansas",
+      "dek": "From the Iran war to tariffs, dissatisfaction with Trump’s policies could prompt deep-red Kansas to elect its first Democratic senator in nearly a century",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281162.html"
+    },
+    {
       "date": "2026-09-15",
       "title": "Trump bashes allies, but Pacific needs them more than ever",
       "dek": "From Pearl Harbor, a look at why U.S. strategy in the Pacific still depends on allies and partners.",
@@ -204,6 +210,12 @@ window.portfolioArticles = {
       "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1271538.html"
     },
     {
+      "date": "2026-06-26",
+      "title": "The new generation of ‘sewer socialists’ are in it to win it",
+      "dek": "The latest crop of democratic socialists is intent on tackling everyday issues such as housing costs, childcare, healthcare and public transportation, reaching Americans who have grown cynical about politics",
+      "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1265546.html"
+    },
+    {
       "date": "2026-04-10",
       "title": "Trump’s real red line isn’t Iran’s nuclear program",
       "dek": "Why the looming midterm elections may matter more to Trump than the stated red lines of the Iran war.",
@@ -217,6 +229,34 @@ window.portfolioArticles = {
     }
   ],
   "latest": [
+    {
+      "date": "2026-10-08",
+      "title": "Vance calls Korea’s ‘political dynamics’ a source of uncertainty in Alaska LNG project",
+      "dek": "The US vice president reiterated the administration’s commitment to “get this done” regarding the Alaska LNG pipeline",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281558.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "Ahead of midterms, farm belt’s loyalty to Trump shows cracks in Kansas",
+      "dek": "From the Iran war to tariffs, dissatisfaction with Trump’s policies could prompt deep-red Kansas to elect its first Democratic senator in nearly a century",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281162.html",
+      "type": "Reportage"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Trump gloats over Korean investment in Alaska LNG project still under review by Seoul",
+      "dek": "According to the Trump administration, US$50 billion will be invested in Alaska for the LNG project",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280415.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Documentary on Korea’s martial law crisis earns warm reception in US",
+      "dek": "MBC’s “The Seoul Guardians” was screened at the Meyer Auditorium of the National Museum of Asian Art",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1279987.html",
+      "type": "Analysis"
+    },
     {
       "date": "2026-09-22",
       "type": "Interview",
@@ -251,27 +291,6 @@ window.portfolioArticles = {
       "title": "‘We must slow the pace’: Tech execs issue warning about pace of AI development",
       "dek": "How concerns about frontier AI and recursive self-improvement are moving deeper into Washington.",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1277746.html"
-    },
-    {
-      "date": "2026-09-11",
-      "type": "Defense",
-      "title": "Seoul shouldn’t pursue nuclear submarine purely as ‘status symbol,’ says US Navy official",
-      "dek": "A U.S. Navy official argues that any Korean nuclear-submarine program needs a clear operational rationale.",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1277423.html"
-    },
-    {
-      "date": "2026-09-11",
-      "type": "Reportage",
-      "title": "Why destroyers like the USS Decatur remain the go-to vessel for the US",
-      "dek": "Aboard an Arleigh Burke-class destroyer at Pearl Harbor.",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1277415.html"
-    },
-    {
-      "date": "2026-09-04",
-      "type": "Correspondent’s Column",
-      "title": "AOC’s star is rising — as are hopes for a different America",
-      "dek": "A look at generational change and the emerging 2028 Democratic field.",
-      "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1276314.html"
     }
   ]
 };
