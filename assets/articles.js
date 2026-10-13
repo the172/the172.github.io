@@ -101,6 +101,24 @@ window.portfolioArticles = {
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281166.html"
     },
     {
+      "date": "2026-10-06",
+      "title": "Senate loss in Kansas could be ‘large crack’ in Republican armor, expert says",
+      "dek": "Alexandra Middlewood, an associate professor of political science at Wichita State University, reviews the state of play ahead of November’s midterms",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281164.html"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Hugging Face fiasco may be ‘last warning’ we get about AI risks",
+      "dek": "Nate Soares, the president of the Machine Intelligence Research Institute, speaks to the Hankyoreh about AI risks and what needs to happen",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280185.html"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "‘Nobody has any promising ideas’: Former Google AI safety researcher sounds warning bell",
+      "dek": "Ramana Kumar said that the Hugging Face incident demonstrated that AI going rogue is “not to be taken as science fiction”",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280151.html"
+    },
+    {
       "date": "2026-09-22",
       "title": "Nick Bostrom",
       "headline": "AI risk expert Nick Bostrom says pausing development will come at ‘cost’",
@@ -281,6 +299,20 @@ window.portfolioArticles = {
       "type": "Interview"
     },
     {
+      "date": "2026-10-06",
+      "title": "Senate loss in Kansas could be ‘large crack’ in Republican armor, expert says",
+      "dek": "Alexandra Middlewood, an associate professor of political science at Wichita State University, reviews the state of play ahead of November’s midterms",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281164.html",
+      "type": "Interview"
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Seoul pushes back on Trump’s Alaska LNG claims, says investment must be commercially viable",
+      "dek": "Korea’s government has repeatedly declared that it will not make any investments without being assured of their “commercial reasonableness”",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280647.html",
+      "type": "Analysis"
+    },
+    {
       "date": "2026-10-01",
       "title": "Trump gloats over Korean investment in Alaska LNG project still under review by Seoul",
       "dek": "According to the Trump administration, US$50 billion will be invested in Alaska for the LNG project",
@@ -288,39 +320,25 @@ window.portfolioArticles = {
       "type": "Analysis"
     },
     {
-      "date": "2026-09-29",
-      "title": "Documentary on Korea’s martial law crisis earns warm reception in US",
-      "dek": "MBC’s “The Seoul Guardians” was screened at the Meyer Auditorium of the National Museum of Asian Art",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1279987.html",
+      "date": "2026-09-30",
+      "title": "Hugging Face fiasco may be ‘last warning’ we get about AI risks",
+      "dek": "Nate Soares, the president of the Machine Intelligence Research Institute, speaks to the Hankyoreh about AI risks and what needs to happen",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280185.html",
+      "type": "Interview"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Leading AI experts warn unchecked ‘intelligence explosion’ could lead to ‘catastrophic’ outcomes",
+      "dek": "Nearly two dozen leading experts in the field said that preparations for such a potential must begin immediately",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280174.html",
       "type": "Analysis"
     },
     {
-      "date": "2026-09-22",
-      "type": "Interview",
-      "title": "AI risk expert Nick Bostrom says pausing development will come at ‘cost’",
-      "dek": "A conversation on superintelligence, risk and why simply stopping development may carry its own dangers.",
-      "url": "https://www.hani.co.kr/arti/english_edition/e_international/1278962.html"
-    },
-    {
-      "date": "2026-09-21",
-      "type": "North Korea",
-      "title": "Trump may propose Pyongyang summit with Kim Jong-un, says former US envoy for N. Korea",
-      "dek": "Stephen Biegun says Seoul should have a central role if U.S.–North Korea diplomacy resumes.",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_northkorea/1278836.html"
-    },
-    {
-      "date": "2026-09-15",
-      "type": "Reportage",
-      "title": "Trump bashes allies, but Pacific needs them more than ever",
-      "dek": "Reporting from Pearl Harbor on alliance networks, naval capacity and deterrence in the Pacific.",
-      "url": "https://www.hani.co.kr/arti/english_edition/e_international/1277952.html"
-    },
-    {
-      "date": "2026-09-15",
-      "type": "AI · U.S.–China",
-      "title": "Both China and Trump rebuff calls to slow advancements in AI",
-      "dek": "Why neither Washington nor Beijing wants to be the first to slow the global AI race.",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1277951.html"
+      "date": "2026-09-30",
+      "title": "‘Nobody has any promising ideas’: Former Google AI safety researcher sounds warning bell",
+      "dek": "Ramana Kumar said that the Hugging Face incident demonstrated that AI going rogue is “not to be taken as science fiction”",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280151.html",
+      "type": "Interview"
     }
   ]
 };
