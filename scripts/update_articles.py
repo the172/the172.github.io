@@ -25,7 +25,7 @@ from html.parser import HTMLParser
 
 ARTICLES_JS = "assets/articles.js"
 LATEST_LIMIT = 9          # number of items in the Latest tab
-MAX_NEW_CHECKS = 30       # max unseen RSS items to open per run
+MAX_NEW_CHECKS = 120      # max unseen RSS items to open per run
 QUERIES = [
     '"Kim Won-chul" site:english.hani.co.kr',
     '"Kim Won-chul" Hankyoreh English Edition',
