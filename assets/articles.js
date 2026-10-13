@@ -37,16 +37,16 @@ window.portfolioArticles = {
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNbGJ5eUlEcWdjN1hKcmhWeU05NEtKbDhiT2M3aURiTHFIdkZTU0Y5bHBMdm5lVE54eXJIejFRbVRUSC1vWW5vUHBGOHppTlpwVHQwX3pIOS02a001Zy1oTzdCakdPYXV5ZzZRZXZRZU9yaGs4ZFZEZmVoZ0I0SURmRWR3?oc=5"
     },
     {
-      "date": "2025-06-11",
-      "title": "‘It’s blatant racism’: As ICE cracks down, Angelenos step up for neighbors - Hankyoreh : English Edition",
-      "dek": "[Reportage] ‘It’s blatant racism’: As ICE cracks down, Angelenos step up for neighbors - Hankyoreh : English Edition",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOV2hIYVp5Xy1BUFZOVWlwNlBXNk52RDI0SVluUWZ5eklVanlHUmMxMnRGdy1ZRENqZE00VVlSR29kOWFVZW1vMFdRMnJsUEV5QWN2OGlIdVh2WFRfU2V0U3pEM0hJc3ZfTjlOM2R3emVpSnRQSlFjbllsM0tFNVZ4cUZR?oc=5"
-    },
-    {
       "date": "2026-03-30",
       "title": "No Kings protests erupt across US and world 1 month into Iran war - Hankyoreh : English Edition",
       "dek": "[Reportage] No Kings protests erupt across US and world 1 month into Iran war - Hankyoreh : English Edition",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaURvSGtabmtxTGRXcXhJbjI0TW5vMDVXMFhMeFlobXJXRTA0bVhBdEMyTUdvMWJDTFQ1MEowY1A1RDlheVJQLWtDbVBMRFNfdWJyUXBmVTZMT2tBSTJlQ3hoMFJCc0xWd3BKeUdDWUZvUDF6MllHcEZZb3JDSF9BTVB3?oc=5"
+    },
+    {
+      "date": "2026-06-05",
+      "title": "Next-gen SMRs poised to power America’s AI future - Hankyoreh : English Edition",
+      "dek": "[Reportage] Next-gen SMRs poised to power America’s AI future - Hankyoreh : English Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdDZKbGl2eFNjVGhjR0VjWlA0TjlrejBVdEJySnlvUS1GNTdzbWdEazhuMklnMmd4Sk5VOEk5SG90WDlWY185ajR5eWV1cDhvQ0tIS29DZVR5QUdUXzZVNzZ2clpuRlVLdWtDSldtRXdOZGhLU1p3d2dpSmRRSzNQMFdR?oc=5"
     }
   ],
   "interview": [
@@ -70,6 +70,13 @@ window.portfolioArticles = {
       "headline": "AI risk expert Nick Bostrom says pausing development will come at ‘cost’ - Hankyoreh : English Edition",
       "dek": "[Interview] AI risk expert Nick Bostrom says pausing development will come at ‘cost’ - Hankyoreh : English Edition",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMlFOdndPYkNYX2J5M2w4Vnc4cW9hNDNYYlNyRDFQd2lYZzUwYlFwU2lnZTE4Q1NfdWRzWWNzSG82ZnYxSHJfLUpPY3JIMUlkbmwwcjJJSTZYZjBfNjVIQjFWQVdIM2tYUE80anVoaUhfM0RIYnl3NjBRRkJqTlJNUXV3?oc=5"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "An Oklahoma Democrat’s historic bid to become first Korean American governor - Hankyoreh : English Edition",
+      "headline": "An Oklahoma Democrat’s historic bid to become first Korean American governor - Hankyoreh : English Edition",
+      "dek": "[Interview] An Oklahoma Democrat’s historic bid to become first Korean American governor - Hankyoreh : English Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPeGhsQlFVS09jU184d29vVHRCd1dkaGVrOHlIM2FmQ2piYnBILUdsTUV0MTVsREhEMTNUVDFFYVBrTzB0VEhIa2dDSHRjZXJLQlplN0EySG9RQXFvdXptcXpYNkt4M2hGUEdoSWlTdTdqZGFBbFdraTBsci1EVmxUWWxR?oc=5"
     }
   ],
   "column": [],
@@ -103,18 +110,18 @@ window.portfolioArticles = {
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdDJ1Zk1sTWFoY21qTkd1UFRmRXRPcGhkdHJsX09RVExYdFdjakhyTGg4SF9QRDdVN3FveVoxa2pyLUVqV2thWklTLWsyV3hkaFNPczJhN2JWODloUzRLMkU2MTdmWHphOGJRUkFlS18wMEJaSTRMMWtuUEZLYzdHSXBn?oc=5"
     },
     {
-      "date": "2026-04-15",
-      "type": "Analysis",
-      "title": "Trump’s pick for Seoul envoy raises concerns over lack of foreign policy expertise - Hankyoreh : English Edition",
-      "dek": "Trump’s pick for Seoul envoy raises concerns over lack of foreign policy expertise - Hankyoreh : English Edition",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQRFFZd0RfcDc0cExaTzY1R3RnUkhXQUVLSnNUeHZWSjRMSDBCSVEwSHBGUDRWS1JDOFRNRkxfRVBOY0xNSFhfblpqWlhKNTZnTWJPY0NTOTdPYkhKcEw1SnE2MllTbE9qTFdMcG5mSTZXcmQ4SzRuZGl2NHIwZGQxTE13?oc=5"
-    },
-    {
       "date": "2026-02-25",
       "type": "Analysis",
       "title": "Could Coupang CEO’s closed-door House deposition trigger Section 301 probe of Korea? - Hankyoreh : English Edition",
       "dek": "Could Coupang CEO’s closed-door House deposition trigger Section 301 probe of Korea? - Hankyoreh : English Edition",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcEVHaThjTXVaaVpsU1VjRUVnM2NmbWhIZURNVGdadWtWUzJxVVdlLTdlVlVWa3pyVTJoVTREai1tQ2ljaUMyVGJXcTdPR1R3dkdYRUFfbVNoZ2hzWXVRb0k2N2VCSkg4WWFhOHhlVE9FVkYzdFVtSkpuZmJpWElPSWVR?oc=5"
+    },
+    {
+      "date": "2026-04-15",
+      "type": "Analysis",
+      "title": "Trump’s pick for Seoul envoy raises concerns over lack of foreign policy expertise - Hankyoreh : English Edition",
+      "dek": "Trump’s pick for Seoul envoy raises concerns over lack of foreign policy expertise - Hankyoreh : English Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQRFFZd0RfcDc0cExaTzY1R3RnUkhXQUVLSnNUeHZWSjRMSDBCSVEwSHBGUDRWS1JDOFRNRkxfRVBOY0xNSFhfblpqWlhKNTZnTWJPY0NTOTdPYkhKcEw1SnE2MllTbE9qTFdMcG5mSTZXcmQ4SzRuZGl2NHIwZGQxTE13?oc=5"
     },
     {
       "date": "2025-09-11",
