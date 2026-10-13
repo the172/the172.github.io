@@ -69,6 +69,18 @@ window.portfolioArticles = {
       "url": "https://www.hani.co.kr/arti/english_edition/e_international/1251757.html"
     },
     {
+      "date": "2025-09-08",
+      "title": "Koreans detained by ICE await their fate in remote private prison",
+      "dek": "Though the workers were no longer in shackles, conditions are said to be poor at the private prison where they are being detained",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1217601.html"
+    },
+    {
+      "date": "2025-07-21",
+      "title": "Korea shows its shipbuilding prowess in Philly Shipyard",
+      "dek": "Hanwha Ocean has successfully shaved around fives months off the process of building a ship at its new docks in Philadelphia",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1209105.html"
+    },
+    {
       "date": "2025-06-12",
       "title": "Koreans fear being scapegoated again as ICE raids send chill through LA",
       "dek": "Reporting from Los Angeles as immigration raids put Korean businesses and workers on edge.",
@@ -82,6 +94,12 @@ window.portfolioArticles = {
     }
   ],
   "interview": [
+    {
+      "date": "2026-10-06",
+      "title": "An Oklahoma Democrat’s historic bid to become first Korean American governor",
+      "dek": "State Rep. Cyndi Munson said that talking to voters has been key to winning over Republican-leaning constituents",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281166.html"
+    },
     {
       "date": "2026-09-22",
       "title": "Nick Bostrom",
@@ -222,10 +240,22 @@ window.portfolioArticles = {
       "url": "https://www.hani.co.kr/arti/english_edition/english_editorials/1253683.html"
     },
     {
+      "date": "2026-03-06",
+      "title": "JD Vance’s 67-hour disappearance",
+      "dek": "The US vice president endorsed Trump as the “no new wars” candidate in 2023 — now what?",
+      "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1248086.html"
+    },
+    {
       "date": "2025-12-26",
       "title": "Coupang’s Game in Washington Follows Familiar Pattern",
       "dek": "A correspondent’s column on lobbying, political influence and the Washington playbook.",
       "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1236734.html"
+    },
+    {
+      "date": "2025-10-23",
+      "title": "Martial law comes for the United States",
+      "dek": "Which city will Trump deem a “mess” needing to be cleaned up next?",
+      "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1225112.html"
     }
   ],
   "latest": [
@@ -242,6 +272,13 @@ window.portfolioArticles = {
       "dek": "From the Iran war to tariffs, dissatisfaction with Trump’s policies could prompt deep-red Kansas to elect its first Democratic senator in nearly a century",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281162.html",
       "type": "Reportage"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "An Oklahoma Democrat’s historic bid to become first Korean American governor",
+      "dek": "State Rep. Cyndi Munson said that talking to voters has been key to winning over Republican-leaning constituents",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281166.html",
+      "type": "Interview"
     },
     {
       "date": "2026-10-01",
@@ -284,13 +321,6 @@ window.portfolioArticles = {
       "title": "Both China and Trump rebuff calls to slow advancements in AI",
       "dek": "Why neither Washington nor Beijing wants to be the first to slow the global AI race.",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1277951.html"
-    },
-    {
-      "date": "2026-09-14",
-      "type": "AI Safety",
-      "title": "‘We must slow the pace’: Tech execs issue warning about pace of AI development",
-      "dek": "How concerns about frontier AI and recursive self-improvement are moving deeper into Washington.",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1277746.html"
     }
   ]
 };
