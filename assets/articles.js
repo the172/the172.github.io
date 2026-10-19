@@ -91,9 +91,21 @@ window.portfolioArticles = {
       "title": "LA may be test case for Trump seizing state power, says mayor",
       "dek": "Reporting from Los Angeles on federal troop deployment, protests, and Mayor Karen Bass’s response.",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1202492.html"
+    },
+    {
+      "date": "2025-06-11",
+      "title": "‘It’s blatant racism’: As ICE cracks down, Angelenos step up for neighbors",
+      "dek": "The Hankyoreh’s reporter visits the protests in LA as they enter their fourth day",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1202281.html"
     }
   ],
   "interview": [
+    {
+      "date": "2026-10-15",
+      "title": "Ex-Alaska official says LNG project abandoned at $44B may now top $70B",
+      "dek": "Bruce Tangeman, the former vice president and chief financial officer of the Alaska Gasline Development Corporation, discusses the Alaska LNG pipeline at the center of negotiations between the US and Korea",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282577.html"
+    },
     {
       "date": "2026-10-06",
       "title": "An Oklahoma Democrat’s historic bid to become first Korean American governor",
@@ -302,6 +314,12 @@ window.portfolioArticles = {
   ],
   "column": [
     {
+      "date": "2026-10-16",
+      "title": "US midterms: A contest of money vs. public sentiment",
+      "dek": "When one party has seemingly unlimited resources to buy ads that bring candidates and their ideas into voters’ living rooms, it’s hard not to feel skeptical about the supposed blue wave",
+      "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1282792.html"
+    },
+    {
       "date": "2026-09-04",
       "title": "AOC’s star is rising — as are hopes for a different America",
       "dek": "Ahead of the midterms, what the rise of AOC says about generational change inside the Democratic Party.",
@@ -346,6 +364,48 @@ window.portfolioArticles = {
   ],
   "latest": [
     {
+      "date": "2026-10-16",
+      "title": "US midterms: A contest of money vs. public sentiment",
+      "dek": "When one party has seemingly unlimited resources to buy ads that bring candidates and their ideas into voters’ living rooms, it’s hard not to feel skeptical about the supposed blue wave",
+      "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1282792.html",
+      "type": "Correspondent’s Column"
+    },
+    {
+      "date": "2026-10-16",
+      "title": "Seoul fears shifting US goalposts could make OPCON transfer ‘impossible’",
+      "dek": "The commander of US Forces Korea recently said that evolving threats necessitated revised plans and “new standards”",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_national/1282784.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "US defers prosecution of Sue Mi Terry in case involving South Korea’s NIS",
+      "dek": "The Koreanist and former CIA analyst will likely avoid trial after being indicted in 2024 for acting on behalf of a foreign government",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282583.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "USFK commander says Korea must meet ‘new standards’ for OPCON transfer",
+      "dek": "His remarks are interpreted as suggesting that the existing criteria alone are insufficient to determine the military capabilities South Korea needs to regain wartime operational control of its military",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282580.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "Trump campaigns on claim of Korean investment in Alaska LNG project",
+      "dek": "Despite repeated claims by Trump, South Korea has yet to announce an investment commitment",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282578.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "Ex-Alaska official says LNG project abandoned at $44B may now top $70B",
+      "dek": "Bruce Tangeman, the former vice president and chief financial officer of the Alaska Gasline Development Corporation, discusses the Alaska LNG pipeline at the center of negotiations between the US and Korea",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282577.html",
+      "type": "Interview"
+    },
+    {
       "date": "2026-10-08",
       "title": "Vance calls Korea’s ‘political dynamics’ a source of uncertainty in Alaska LNG project",
       "dek": "The US vice president reiterated the administration’s commitment to “get this done” regarding the Alaska LNG pipeline",
@@ -365,51 +425,20 @@ window.portfolioArticles = {
       "dek": "State Rep. Cyndi Munson said that talking to voters has been key to winning over Republican-leaning constituents",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281166.html",
       "type": "Interview"
-    },
-    {
-      "date": "2026-10-06",
-      "title": "Senate loss in Kansas could be ‘large crack’ in Republican armor, expert says",
-      "dek": "Alexandra Middlewood, an associate professor of political science at Wichita State University, reviews the state of play ahead of November’s midterms",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281164.html",
-      "type": "Interview"
-    },
-    {
-      "date": "2026-10-02",
-      "title": "Seoul pushes back on Trump’s Alaska LNG claims, says investment must be commercially viable",
-      "dek": "Korea’s government has repeatedly declared that it will not make any investments without being assured of their “commercial reasonableness”",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280647.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-10-01",
-      "title": "Trump gloats over Korean investment in Alaska LNG project still under review by Seoul",
-      "dek": "According to the Trump administration, US$50 billion will be invested in Alaska for the LNG project",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280415.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Hugging Face fiasco may be ‘last warning’ we get about AI risks",
-      "dek": "Nate Soares, the president of the Machine Intelligence Research Institute, speaks to the Hankyoreh about AI risks and what needs to happen",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280185.html",
-      "type": "Interview"
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Leading AI experts warn unchecked ‘intelligence explosion’ could lead to ‘catastrophic’ outcomes",
-      "dek": "Nearly two dozen leading experts in the field said that preparations for such a potential must begin immediately",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280174.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-09-30",
-      "title": "‘Nobody has any promising ideas’: Former Google AI safety researcher sounds warning bell",
-      "dek": "Ramana Kumar said that the Hugging Face incident demonstrated that AI going rogue is “not to be taken as science fiction”",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1280151.html",
-      "type": "Interview"
     }
   ],
   "_checked": [
+    "https://english.hani.co.kr/arti/english_edition/list",
+    "1282922",
+    "1282793",
+    "1282792",
+    "1282786",
+    "1282784",
+    "1282583",
+    "1282580",
+    "1282578",
+    "1282577",
+    "1282574",
     "1282017",
     "1282014",
     "1282011",
@@ -417,6 +446,7 @@ window.portfolioArticles = {
     "1282002",
     "1281772",
     "1281763",
+    "1281668",
     "1281558",
     "1281554",
     "1281170",
@@ -501,8 +531,11 @@ window.portfolioArticles = {
     "1207295",
     "1206910",
     "1202491",
+    "1202281",
+    "1197658",
     "1196675",
     "1194293",
+    "1194137",
     "1190063",
     "1188830",
     "1187392",
@@ -513,6 +546,7 @@ window.portfolioArticles = {
     "972183",
     "969998",
     "897439",
+    "844517",
     "748512",
     "596370",
     "587926"
