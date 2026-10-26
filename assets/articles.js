@@ -69,6 +69,12 @@ window.portfolioArticles = {
       "url": "https://www.hani.co.kr/arti/english_edition/e_international/1251757.html"
     },
     {
+      "date": "2026-02-16",
+      "title": "Monks’ 2,300-mile walk for peace inspires hope in a troubled US",
+      "dek": "A silent pilgrimage by a group of Buddhist monks has captivated the nation in trying times",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1245204.html"
+    },
+    {
       "date": "2025-09-08",
       "title": "Koreans detained by ICE await their fate in remote private prison",
       "dek": "Though the workers were no longer in shackles, conditions are said to be poor at the private prison where they are being detained",
@@ -297,13 +303,27 @@ window.portfolioArticles = {
       "date": "2025-03",
       "dateDisplay": "March 2025",
       "title": "Eric Labs",
-      "dek": "On U.S. naval shipbuilding challenges and Korea–U.S. cooperation."
+      "dek": "On U.S. naval shipbuilding challenges and Korea–U.S. cooperation.",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1188839.html",
+      "headline": "The US desperately needs warships — can Korea help fill the demand?"
+    },
+    {
+      "date": "2025-02-11",
+      "title": "Korea’s steel industry could buckle under Trump’s tariff war",
+      "dek": "Trump’s announcement of universal tariffs on steel and aluminum appears certain to deal a blow to its steel exports to the US",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_business/1181896.html"
     },
     {
       "date": "2025-02",
       "dateDisplay": "February 2025",
       "title": "Wendy Cutler",
       "dek": "On Trump’s tariff strategy, reciprocal tariffs, and implications for Korea–U.S. trade."
+    },
+    {
+      "date": "2024-10-21",
+      "title": "US and others say they ‘can’t confirm’ North Korean troop deployment — but why?",
+      "dek": "The inability to provide confirmation is perceived as unusual in light of the history of South Korean and US intelligence authorities collaborating closely and sharing intelligence based on monitoring of North Korean troop activities",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_northkorea/1163554.html"
     },
     {
       "date": "2019-06-11",
@@ -364,6 +384,13 @@ window.portfolioArticles = {
   ],
   "latest": [
     {
+      "date": "2026-10-23",
+      "title": "Chief of US 8th Army calls unit a ‘global force,’ hinting at deployment beyond Korea",
+      "dek": "The comments are read as suggesting that the force could take on a bigger role in checking China or responding to a crisis in the Taiwan Strait",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1283901.html",
+      "type": "Analysis"
+    },
+    {
       "date": "2026-10-16",
       "title": "US midterms: A contest of money vs. public sentiment",
       "dek": "When one party has seemingly unlimited resources to buy ads that bring candidates and their ideas into voters’ living rooms, it’s hard not to feel skeptical about the supposed blue wave",
@@ -418,17 +445,20 @@ window.portfolioArticles = {
       "dek": "From the Iran war to tariffs, dissatisfaction with Trump’s policies could prompt deep-red Kansas to elect its first Democratic senator in nearly a century",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281162.html",
       "type": "Reportage"
-    },
-    {
-      "date": "2026-10-06",
-      "title": "An Oklahoma Democrat’s historic bid to become first Korean American governor",
-      "dek": "State Rep. Cyndi Munson said that talking to voters has been key to winning over Republican-leaning constituents",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281166.html",
-      "type": "Interview"
     }
   ],
   "_checked": [
+    "https://english.hani.co.kr/arti/english_edition/english_editorials",
     "https://english.hani.co.kr/arti/english_edition/list",
+    "1283992",
+    "1283903",
+    "1283901",
+    "1283897",
+    "1283896",
+    "1283497",
+    "1283265",
+    "1283091",
+    "1283078",
     "1282922",
     "1282793",
     "1282792",
@@ -479,9 +509,13 @@ window.portfolioArticles = {
     "1267534",
     "1266452",
     "1264404",
+    "1264022",
+    "1264019",
     "1259830",
     "1258311",
     "1257830",
+    "1257614",
+    "1257123",
     "1256320",
     "1256316",
     "1255816",
@@ -499,11 +533,13 @@ window.portfolioArticles = {
     "1249585",
     "1249024",
     "1248654",
+    "1248436",
     "1247860",
     "1247858",
     "1246986",
     "1246543",
     "1246352",
+    "1245204",
     "1245177",
     "1243767",
     "1243148",
@@ -511,6 +547,7 @@ window.portfolioArticles = {
     "1241740",
     "1233683",
     "1230356",
+    "1227797",
     "1226216",
     "1225723",
     "1224647",
@@ -537,17 +574,22 @@ window.portfolioArticles = {
     "1194293",
     "1194137",
     "1190063",
+    "1188839",
     "1188830",
     "1187392",
+    "1181896",
     "1174713",
     "1170503",
     "1169117",
+    "1163554",
     "1029344",
     "972183",
     "969998",
+    "958446",
     "897439",
     "844517",
     "748512",
+    "727561",
     "596370",
     "587926"
   ]
