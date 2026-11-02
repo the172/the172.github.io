@@ -107,6 +107,12 @@ window.portfolioArticles = {
   ],
   "interview": [
     {
+      "date": "2026-10-26",
+      "title": "US-Korea ties at ‘uniquely dangerous moment,’ but investment is the new backstop",
+      "dek": "Adam Farrar, who served as NSC Korea director under Trump and Biden, predicts OPCON transfer is the most likely issue to advance, while nuclear submarines and enrichment face stiff resistance from the US bureaucracy",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1284215.html"
+    },
+    {
       "date": "2026-10-15",
       "title": "Ex-Alaska official says LNG project abandoned at $44B may now top $70B",
       "dek": "Bruce Tangeman, the former vice president and chief financial officer of the Alaska Gasline Development Corporation, discusses the Alaska LNG pipeline at the center of negotiations between the US and Korea",
@@ -154,6 +160,18 @@ window.portfolioArticles = {
       "title": "In a huff over Seoul’s lack of cooperation, Trump reaches out to Kim Jong-un",
       "dek": "Analysts suggested the US leader’s decision to scale back joint military drills with South Korea was in part due to dissatisfaction with its lack of cooperation on Iran and delays in the rollout of its investments in the US",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1273631.html"
+    },
+    {
+      "date": "2026-08-19",
+      "title": "One post from Trump cuts major military drills with Korea in half",
+      "dek": "The joint exercises are set to end early on Aug. 21 instead of the previously scheduled Aug. 27",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_national/1273634.html"
+    },
+    {
+      "date": "2026-08-18",
+      "title": "Trump says Kim Jong-un has responded to proposal for dialogue",
+      "dek": "The US leader voiced annoyance with South Korea the same day over a supposed interaction with President Lee Jae Myung in which the latter refused to offer the US help with Iran",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1273439.html"
     },
     {
       "date": "2026-08-12",
@@ -210,13 +228,21 @@ window.portfolioArticles = {
       "date": "2026-03",
       "dateDisplay": "March 2026",
       "title": "James Walsh",
-      "dek": "On the strategic failures of U.S. airstrikes on Iran, the resilience of nuclear knowledge, and implications for the global non-proliferation regime."
+      "dek": "On the strategic failures of U.S. airstrikes on Iran, the resilience of nuclear knowledge, and implications for the global non-proliferation regime.",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_northkorea/1248643.html",
+      "headline": "Abandoning reunification is survival strategy for North Korea, expert says"
     },
     {
       "date": "2026-02-15",
       "title": "US House committee accuses Korea of targeting Coupang to ‘advantage’ domestic firms",
       "dek": "A spokesperson for the Judiciary Committee hinted at possible legislation aimed at stopping “discriminatory enforcement” against American businesses",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1245177.html"
+    },
+    {
+      "date": "2026-01-02",
+      "title": "US voices ‘significant concerns’ about new Korean regulations on digital platforms",
+      "dek": "The strong criticism from the US State Department could signal trade friction between the two countries",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1237781.html"
     },
     {
       "date": "2025-12",
@@ -384,6 +410,20 @@ window.portfolioArticles = {
   ],
   "latest": [
     {
+      "date": "2026-10-30",
+      "title": "US declines to clarify visa problems faced by Korean politicians",
+      "dek": "The US Department of State said that its policy is to review all visa applications on a case-by-case basis",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1285070.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-10-26",
+      "title": "US-Korea ties at ‘uniquely dangerous moment,’ but investment is the new backstop",
+      "dek": "Adam Farrar, who served as NSC Korea director under Trump and Biden, predicts OPCON transfer is the most likely issue to advance, while nuclear submarines and enrichment face stiff resistance from the US bureaucracy",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1284215.html",
+      "type": "Interview"
+    },
+    {
       "date": "2026-10-23",
       "title": "Chief of US 8th Army calls unit a ‘global force,’ hinting at deployment beyond Korea",
       "dek": "The comments are read as suggesting that the force could take on a bigger role in checking China or responding to a crisis in the Taiwan Strait",
@@ -431,25 +471,19 @@ window.portfolioArticles = {
       "dek": "Bruce Tangeman, the former vice president and chief financial officer of the Alaska Gasline Development Corporation, discusses the Alaska LNG pipeline at the center of negotiations between the US and Korea",
       "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282577.html",
       "type": "Interview"
-    },
-    {
-      "date": "2026-10-08",
-      "title": "Vance calls Korea’s ‘political dynamics’ a source of uncertainty in Alaska LNG project",
-      "dek": "The US vice president reiterated the administration’s commitment to “get this done” regarding the Alaska LNG pipeline",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281558.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-10-06",
-      "title": "Ahead of midterms, farm belt’s loyalty to Trump shows cracks in Kansas",
-      "dek": "From the Iran war to tariffs, dissatisfaction with Trump’s policies could prompt deep-red Kansas to elect its first Democratic senator in nearly a century",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1281162.html",
-      "type": "Reportage"
     }
   ],
   "_checked": [
     "https://english.hani.co.kr/arti/english_edition/english_editorials",
     "https://english.hani.co.kr/arti/english_edition/list",
+    "1285075",
+    "1285072",
+    "1285070",
+    "1284855",
+    "1284641",
+    "1284418",
+    "1284402",
+    "1284215",
     "1283992",
     "1283903",
     "1283901",
@@ -498,9 +532,12 @@ window.portfolioArticles = {
     "1275731",
     "1275521",
     "1274512",
+    "1273865",
     "1273860",
+    "1273634",
     "1273633",
     "1273631",
+    "1273439",
     "1272583",
     "1272508",
     "1269862",
@@ -514,8 +551,10 @@ window.portfolioArticles = {
     "1259830",
     "1258311",
     "1257830",
+    "1257616",
     "1257614",
     "1257123",
+    "1256471",
     "1256320",
     "1256316",
     "1255816",
@@ -533,6 +572,7 @@ window.portfolioArticles = {
     "1249585",
     "1249024",
     "1248654",
+    "1248643",
     "1248436",
     "1247860",
     "1247858",
@@ -545,10 +585,12 @@ window.portfolioArticles = {
     "1243148",
     "1242604",
     "1241740",
+    "1237781",
     "1233683",
     "1230356",
     "1227797",
     "1226216",
+    "1225951",
     "1225723",
     "1224647",
     "1222166",
@@ -564,15 +606,19 @@ window.portfolioArticles = {
     "1215783",
     "1215343",
     "1215336",
+    "1212700",
     "1211928",
+    "1209523",
     "1207295",
     "1206910",
     "1202491",
     "1202281",
+    "1200121",
     "1197658",
     "1196675",
     "1194293",
     "1194137",
+    "1193918",
     "1190063",
     "1188839",
     "1188830",
@@ -588,9 +634,12 @@ window.portfolioArticles = {
     "958446",
     "897439",
     "844517",
+    "753623",
     "748512",
     "727561",
     "596370",
-    "587926"
+    "587926",
+    "478346",
+    "193609"
   ]
 };
