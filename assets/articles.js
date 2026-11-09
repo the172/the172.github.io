@@ -107,6 +107,12 @@ window.portfolioArticles = {
   ],
   "interview": [
     {
+      "date": "2026-11-09",
+      "title": "Korea’s OPCON, nuclear sub plans may stall during Trump’s remaining term, says ex-envoy",
+      "dek": "Joseph Yun, the former chargé d’affaires ad interim at the US Embassy in Seoul, made the comments in a recent interview with Voice of America’s Korean language service",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1286399.html"
+    },
+    {
       "date": "2026-10-26",
       "title": "US-Korea ties at ‘uniquely dangerous moment,’ but investment is the new backstop",
       "dek": "Adam Farrar, who served as NSC Korea director under Trump and Biden, predicts OPCON transfer is the most likely issue to advance, while nuclear submarines and enrichment face stiff resistance from the US bureaucracy",
@@ -410,6 +416,41 @@ window.portfolioArticles = {
   ],
   "latest": [
     {
+      "date": "2026-11-09",
+      "title": "Korea’s OPCON, nuclear sub plans may stall during Trump’s remaining term, says ex-envoy",
+      "dek": "Joseph Yun, the former chargé d’affaires ad interim at the US Embassy in Seoul, made the comments in a recent interview with Voice of America’s Korean language service",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1286399.html",
+      "type": "Interview"
+    },
+    {
+      "date": "2026-11-06",
+      "title": "After midterms, Trump floats 300% tariffs, says US may have to ‘destroy rest of’ Iran",
+      "dek": "한겨레는 신뢰, 공정을 바탕으로 최신 뉴스와 심층 보도, 칼럼 등을 제공합니다. 정치, 사회, 경제, 문화, 젠더, 기후변화 등 각 분야의 폭 넓은 인사이트를 경험해보세요.",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1286159.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-11-06",
+      "title": "‘Extinction-level event’: Republicans turn on Trump after midterms rout",
+      "dek": "After a disastrous midterm performance by the Republicans, some in the party are calling for a shake-up of top officials at the White House",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1286151.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Blue wave breaks through Republican strongholds, handing Democrats the Senate and House",
+      "dek": "Trump will face a Democratic-controlled Congress for the remaining two years of his presidency",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1285741.html",
+      "type": "Analysis"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "US consumer advocacy group slams Coupang’s ‘weaponization’ of US trade policy against Korean regulation",
+      "dek": "Public Citizen issued a policy memo in which it said that Coupang has “enlisted all available avenues to lobby for US lawmakers to pressure the South Korean government on its behalf”",
+      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1285373.html",
+      "type": "Analysis"
+    },
+    {
       "date": "2026-10-30",
       "title": "US declines to clarify visa problems faced by Korean politicians",
       "dek": "The US Department of State said that its policy is to review all visa applications on a case-by-case basis",
@@ -436,46 +477,20 @@ window.portfolioArticles = {
       "dek": "When one party has seemingly unlimited resources to buy ads that bring candidates and their ideas into voters’ living rooms, it’s hard not to feel skeptical about the supposed blue wave",
       "url": "https://english.hani.co.kr/arti/english_edition/english_editorials/1282792.html",
       "type": "Correspondent’s Column"
-    },
-    {
-      "date": "2026-10-16",
-      "title": "Seoul fears shifting US goalposts could make OPCON transfer ‘impossible’",
-      "dek": "The commander of US Forces Korea recently said that evolving threats necessitated revised plans and “new standards”",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_national/1282784.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-10-15",
-      "title": "US defers prosecution of Sue Mi Terry in case involving South Korea’s NIS",
-      "dek": "The Koreanist and former CIA analyst will likely avoid trial after being indicted in 2024 for acting on behalf of a foreign government",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282583.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-10-15",
-      "title": "USFK commander says Korea must meet ‘new standards’ for OPCON transfer",
-      "dek": "His remarks are interpreted as suggesting that the existing criteria alone are insufficient to determine the military capabilities South Korea needs to regain wartime operational control of its military",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282580.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-10-15",
-      "title": "Trump campaigns on claim of Korean investment in Alaska LNG project",
-      "dek": "Despite repeated claims by Trump, South Korea has yet to announce an investment commitment",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282578.html",
-      "type": "Analysis"
-    },
-    {
-      "date": "2026-10-15",
-      "title": "Ex-Alaska official says LNG project abandoned at $44B may now top $70B",
-      "dek": "Bruce Tangeman, the former vice president and chief financial officer of the Alaska Gasline Development Corporation, discusses the Alaska LNG pipeline at the center of negotiations between the US and Korea",
-      "url": "https://english.hani.co.kr/arti/english_edition/e_international/1282577.html",
-      "type": "Interview"
     }
   ],
   "_checked": [
     "https://english.hani.co.kr/arti/english_edition/english_editorials",
     "https://english.hani.co.kr/arti/english_edition/list",
+    "1286399",
+    "1286177",
+    "1286159",
+    "1286151",
+    "1286110",
+    "1286074",
+    "1285916",
+    "1285741",
+    "1285373",
     "1285075",
     "1285072",
     "1285070",
@@ -561,6 +576,7 @@ window.portfolioArticles = {
     "1255814",
     "1254367",
     "1254195",
+    "1253491",
     "1253053",
     "1252383",
     "1250882",
@@ -595,6 +611,7 @@ window.portfolioArticles = {
     "1224647",
     "1222166",
     "1221824",
+    "1220054",
     "1219041",
     "1218850",
     "1218239",
